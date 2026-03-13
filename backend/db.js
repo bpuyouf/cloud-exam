@@ -10,8 +10,8 @@ if (!dbServerId) {
 
 const dbConfig = {
   host: dbServerId,
-  user: 'root',
-  password: 'mysqlpassword1234!',
+  user: 'azureuser',
+  password: process.env.MYSQL_PASSWORD,
   database: 'cloudapp'
 };
 
