@@ -4,14 +4,15 @@ import mysql from 'mysql2/promise';
 dotenv.config();
 
 const dbServerId = process.env.DB_SERVER_ID;
+const dbPassword = process.env.MYSQL_PASSWORD;
 if (!dbServerId) {
   throw new Error('DB_SERVER_ID is not set in .env');
 }
 
 const dbConfig = {
   host: dbServerId,
-  user: 'root',
-  password: 'mysqlpassword1234!',
+  user: 'azureuser',
+  password: dbPassword,
   database: 'cloudapp'
 };
 
