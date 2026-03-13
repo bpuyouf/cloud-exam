@@ -4,14 +4,16 @@ import mysql from 'mysql2/promise';
 dotenv.config();
 
 const dbServerId = process.env.DB_SERVER_ID;
-const dbPassword = process.env.MYSQL_PASSWORD;
 if (!dbServerId) {
   throw new Error('DB_SERVER_ID is not set in .env');
 }
 
+const dbUser = process.env.DB_USER || 'azureuser';
+const dbPassword = process.env.DB_PASSWORD || process.env.MYSQL_PASSWORD;
+
 const dbConfig = {
   host: dbServerId,
-  user: 'azureuser',
+  user: dbUser,
   password: dbPassword,
   database: 'cloudapp'
 };
@@ -31,4 +33,4 @@ export async function connectDb() {
   }
 }
 
-export default pool;
+export { pool };
