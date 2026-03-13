@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Exam</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title">Cloud Exam</h1>
+        <p class="header__subtitle">Manage users stored in the database.</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="section section--form">
+        <h2 class="section__title">Add a User</h2>
+        <form class="form" id="userForm">
+          <label class="form__label" for="userName">Name</label>
+          <input
+            class="form__input"
+            id="userName"
+            name="name"
+            type="text"
+            placeholder="e.g. John Doe"
+            required
+          />
+
+          <label class="form__label" for="userEmail">Email</label>
+          <input
+            class="form__input"
+            id="userEmail"
+            name="email"
+            type="email"
+            placeholder="e.g. john@example.com"
+            required
+          />
+
+          <button class="form__button" type="submit">Add User</button>
+        </form>
+      </section>
+
+      <section class="section section--list">
+        <h2 class="section__title">Users</h2>
+        <ul class="user-list" id="userList"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
